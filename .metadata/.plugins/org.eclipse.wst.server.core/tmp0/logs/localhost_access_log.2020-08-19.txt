@@ -1,0 +1,7 @@
+127.0.0.1 - - [19/Aug/2020:15:26:04 +0700] "GET / HTTP/1.1" 404 709
+127.0.0.1 - - [19/Aug/2020:15:26:16 +0700] "GET /roadmap/admin-list HTTP/1.1" 200 9398
+127.0.0.1 - - [19/Aug/2020:15:26:16 +0700] "GET /roadmap/template/admin/font-awesome/4.5.0/css/font-awesome.min.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Aug/2020:15:26:16 +0700] "GET /roadmap/template/admin/assets/css/bootstrap.min.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Aug/2020:15:26:16 +0700] "GET /roadmap/template/paging/jquery.twbsPagination.js HTTP/1.1" 304 -
+127.0.0.1 - - [19/Aug/2020:15:26:16 +0700] "GET /roadmap/template/admin/assets/css/ace.min.css HTTP/1.1" 304 -
+127.0.0.1 - - [19/Aug/2020:15:26:18 +0700] "GET /roadmap/admin-list HTTP/1.1" 200 9398

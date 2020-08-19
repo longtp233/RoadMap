@@ -1,0 +1,7 @@
+package dao;
+
+import model.*;
+
+public interface Userable extends Generic <UserModel > {
+	UserModel  findByUserNameAndPasswordAndStatus(String userName, String password, Integer status);
+}

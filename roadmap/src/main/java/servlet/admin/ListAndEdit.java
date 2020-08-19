@@ -1,0 +1,71 @@
+package servlet.admin;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import constance.Const;
+import model.NewModel;
+import service.INewService;
+import service.impl.NewService;
+
+/**
+ * Servlet implementation class Create
+ */
+@WebServlet(urlPatterns = {"/admin-list"})
+public class ListAndEdit extends HttpServlet { 
+       
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -372995911599156359L; 
+
+
+	/**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ListAndEdit() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    //@Inject 
+    private INewService newService;
+    
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		newService=new NewService();
+		
+		
+		NewModel model=new NewModel();
+		model.setListResult(newService.takeAll());
+		request.setAttribute(Const.MODEL, model); 
+				
+		RequestDispatcher rdDispatcher =request.getRequestDispatcher("views/admin/list.jsp");
+		rdDispatcher.forward(request, response);
+		// co the hien thi sang ca tran edit 
+		 
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

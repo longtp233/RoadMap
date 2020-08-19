@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="map.NewMapper"/>
+    <fullyQualifiedTypeName name="service.INewService"/>
+    <fullyQualifiedTypeName name="model.NewModel"/>
+    <fullyQualifiedTypeName name="javax.inject.Inject"/>
+    <fullyQualifiedTypeName name="service.impl.NewService"/>
+    <fullyQualifiedTypeName name="dao.impl.NewsDao"/>
+</qualifiedTypeNameHistroy>
