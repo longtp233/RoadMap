@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.StyleConstants.ColorConstants;
 
+import org.apache.taglibs.standard.tag.common.xml.IfTag;
+
+import com.google.protobuf.DescriptorProtos.MethodOptions.IdempotencyLevel;
+
 import constance.Const;
 
 @WebServlet(urlPatterns = {"/admin"})
@@ -22,11 +26,17 @@ public class Admin extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String aString=new String("hello test request dispatcher"); 
-		req.setAttribute(Const.MODEL, "hello ");
-		RequestDispatcher rdDispatcher =req.getRequestDispatcher("views/admin/admin.jsp");
-		rdDispatcher.forward(req, resp);
+		//String actString=req.getParameter("action");
+		////if(actString!=null) {
+			//if (actString.equals("login")) {
+				RequestDispatcher rdDispatcher =req.getRequestDispatcher("views/admin/home.jsp");
+				rdDispatcher.forward(req, resp);
+			//}
+			
+//		}else {
+//			RequestDispatcher rdDispatcher =req.getRequestDispatcher("views/admin/login.jsp");
+//			rdDispatcher.forward(req, resp);
+//		}
 	}
 	
 	@Override

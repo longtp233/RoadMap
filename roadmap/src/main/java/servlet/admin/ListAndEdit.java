@@ -29,35 +29,50 @@ public class ListAndEdit extends HttpServlet {
 	 */
 	private static final long serialVersionUID = -372995911599156359L; 
 
-
-	/**
-     * @see HttpServlet#HttpServlet()
-     */
     public ListAndEdit() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-    //@Inject 
+	
     private INewService newService;
     
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		newService=new NewService();
-		
-		
+		String aString=request.getParameter("type");
+		String id=request.getParameter("id");     // als 
+	    newService=new NewService();
 		NewModel model=new NewModel();
-		model.setListResult(newService.takeAll());
-		request.setAttribute(Const.MODEL, model); 
+		
+		String view = "";
+		if(aString!=null) {
+			if(aString.equals("edit")) {
+				view="views/admin/edit.jsp";
+				Long idTemp= Long.parseLong(id); 
+				model = newService.findOne(idTemp); 
+			//	request.setAttribute("categories", categoryService.findAll()); 
+				request.setAttribute(Const.MODEL,model );
 				
-		RequestDispatcher rdDispatcher =request.getRequestDispatcher("views/admin/list.jsp");
-		rdDispatcher.forward(request, response);
-		// co the hien thi sang ca tran edit 
-		 
+			}else if(aString.equals("new")) {
+				view="views/admin/edit.jsp";
+				
+			}else if (aString.equals("delete")) {
+				Long idTemp= Long.parseLong(id); 
+				newService.delete(idTemp); 
+				model.setListResult(newService.takeAll());
+				request.setAttribute(Const.MODEL, model); 
+				view="views/admin/list.jsp";
+			}
+		
+		}else {
+			model.setListResult(newService.takeAll());
+			request.setAttribute(Const.MODEL, model); 
+			view="views/admin/list.jsp";
+		}
+		
+		RequestDispatcher rdDispatcher =request.getRequestDispatcher(view);
+		rdDispatcher.forward(request, response); 
 	}
 
 	/**

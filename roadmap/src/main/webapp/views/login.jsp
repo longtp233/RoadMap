@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Đăng nhập</title>
+<title>log in</title>
 </head>
 <body>
 	<div class="container">
@@ -17,18 +17,18 @@
 							${message}
 					</div>
 				</c:if>
-				<form action="<c:url value='/dang-nhap'/>" id="formLogin" method="post">
+				<form action="<c:url value='/login'/>" id="formLogin" method="post">
 					<div class="form-group">
 						<input type="text" class="form-control" id="userName" name="userName"
-							placeholder="Tên đăng nhập">
+							placeholder="user name ">
 					</div>
 
 					<div class="form-group">
 						<input type="password" class="form-control" id="password" name="password"
-							placeholder="Mật khẩu">
+							placeholder="password">
 					</div>
 					<input type="hidden" value="login" name="action"/>
-					<button type="submit" class="btn btn-primary" >Đăng nhập</button>
+					<button type="submit" class="btn btn-primary" >Log in</button>
 				</form>
 			</div>
 		</div>

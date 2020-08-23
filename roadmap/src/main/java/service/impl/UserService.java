@@ -1,18 +1,20 @@
 package service.impl;
 
 import dao.Userable;
+import dao.impl.UserDao;
 import model.UserModel;
 import service.IUserService;
 
 public class UserService implements IUserService {
 	 
-	//@Inject
+	 
 	private Userable userDAO;
  
 	
 	@Override
-	public UserModel  findByUserNameAndPasswordAndStatus(String userName, String password, Integer status) {
-		return userDAO.findByUserNameAndPasswordAndStatus(userName, password, status);
+	public UserModel  findUser(String userName, String password) {
+		userDAO=new UserDao();
+		return userDAO.findUser(userName, password);
 	}
 	
 }

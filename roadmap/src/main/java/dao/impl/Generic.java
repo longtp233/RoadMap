@@ -17,31 +17,17 @@ import map.RowMapper;
 public class Generic<T> implements Genericable<T> {
 
 	
-	public   Connection getConnection()  {
-		String hostName = "localhost";
 
+	public static Connection getConnection( ) {
+		String hostName = "localhost";
 		String dbName = "roadmap";
 		String userName = "root";
 		String password = "root";
-
-		try {
-			return getConnection(hostName, dbName, userName, password);
-		} catch (SQLException | ClassNotFoundException e)  {
-			e.printStackTrace();
-			return null;
-		}
-	}
-
-	public static Connection getConnection(String hostName, String dbName, String userName, String password)
-			throws SQLException, ClassNotFoundException {
-// Khai báo class Driver cho DB MySQL
-// Việc này cần thiết với Java 5
-// Java6 tự động tìm kiếm Driver thích hợp.
-// Nếu bạn dùng Java6, thì ko cần dòng này cũng được.
-		Class.forName("com.mysql.jdbc.Driver");
-
-// Cấu trúc URL Connection
-// Ví dụ: jdbc:mysql://localhost:3306/databasename
+ 		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e1) { 
+			e1.printStackTrace();
+		} 
 		String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
 		Connection conn=null;
 		try {
@@ -63,8 +49,7 @@ public class Generic<T> implements Genericable<T> {
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		try {
-			connection = getConnection();
-			System.out.println(sql);
+			connection = getConnection(); 
 			statement = connection.prepareStatement(sql);
 			setParameter(statement, parameters);
 			resultSet = statement.executeQuery();
@@ -92,27 +77,6 @@ public class Generic<T> implements Genericable<T> {
 	}
 
 	
-	// ham set ??? cho statement
-	private void setParameter(PreparedStatement statement, Object... parameters) {
-		try {
-			for (int i = 0; i < parameters.length; i++) {
-				Object parameter = parameters[i];
-				int index = i + 1;
-				if (parameter instanceof Long) {
-					statement.setLong(index, (Long) parameter);
-				} else if (parameter instanceof String) {
-					statement.setString(index, (String) parameter);
-				} else if (parameter instanceof Integer) {
-					statement.setInt(index, (Integer) parameter);
-				} else if (parameter instanceof Timestamp) {
-					statement.setTimestamp(index, (Timestamp) parameter);
-				}
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	public void update(String sql, Object... parameters) {
 		Connection connection = null;
@@ -190,38 +154,27 @@ public class Generic<T> implements Genericable<T> {
 		return null;
 	}
 
-	@Override
-	public int count(String sql, Object... parameters) {
-		Connection connection = null;
-		PreparedStatement statement = null;
-		ResultSet resultSet = null;
-		try {
-			int count = 0;
-			connection = getConnection();
-			statement = connection.prepareStatement(sql);
-			setParameter(statement, parameters);
-			resultSet = statement.executeQuery();
-			while (resultSet.next()) {
-				count = resultSet.getInt(1);
-			}
-			return count;
-		} catch (SQLException e) {
-			return 0;
-		} finally {
+	
+	
+	// ham set ??? cho statement 
+		private void setParameter(PreparedStatement statement, Object... parameters) {
 			try {
-				if (connection != null) {
-					connection.close();
-				}
-				if (statement != null) {
-					statement.close();
-				}
-				if (resultSet != null) {
-					resultSet.close();
+				for (int i = 0; i < parameters.length; i++) {
+					Object parameter = parameters[i];
+					int index = i + 1;
+					if (parameter instanceof Long) {
+						statement.setLong(index, (Long) parameter);
+					} else if (parameter instanceof String) {
+						statement.setString(index, (String) parameter);
+					} else if (parameter instanceof Integer) {
+						statement.setInt(index, (Integer) parameter);
+					} else if (parameter instanceof Timestamp) {
+						statement.setTimestamp(index, (Timestamp) parameter);
+					}
 				}
 			} catch (SQLException e) {
-				return 0;
+				e.printStackTrace();
 			}
 		}
-	}
 
 }

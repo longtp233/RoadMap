@@ -9,23 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
+              <a class="nav-link" href="#">Home 
               </a>
             </li>
-            <c:if test="${not empty USERMODEL}">
+             
               <li class="nav-item">
-                <a class="nav-link" href='#'>Wellcome, ${USERMODEL.fullName}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href='<c:url value="/thoat?action=logout"/>'>Log in</a>
-              </li>
-            </c:if>
-            <c:if test="true">
-              <li class="nav-item">
-                <a class="nav-link" href='<c:url value="/dang-nhap?action=login"/>'>Log out</a>
-              </li>
-            </c:if>
+                <a class="nav-link" href='<c:url value="/login"/>'>Log in</a>
+              </li> 
           </ul>
         </div>
       </div>
