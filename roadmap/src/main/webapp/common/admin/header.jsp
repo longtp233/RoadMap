@@ -12,7 +12,7 @@
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
-                    Xin chào   
+                    Admin Header  
                 </small>
             </a>
         </div>
@@ -23,7 +23,7 @@
                         Xin chào, ${USERMODEL.fullName}
                     </a>
                     <li class="light-blue dropdown-modal">
-                        <a href='<c:url value="/thoat?action=logout"/>'>
+                        <a href='<c:url value="/logout"/>'>
                             <i class="ace-icon fa fa-power-off"></i>
                             Thoát
                         </a>

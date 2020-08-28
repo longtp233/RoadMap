@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="map.NewMapper"/>
-    <fullyQualifiedTypeName name="service.INewService"/>
-    <fullyQualifiedTypeName name="model.NewModel"/>
     <fullyQualifiedTypeName name="javax.inject.Inject"/>
     <fullyQualifiedTypeName name="service.impl.NewService"/>
     <fullyQualifiedTypeName name="dao.impl.NewsDao"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="constance.Const"/>
+    <fullyQualifiedTypeName name="java.lang.Long"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.google.protobuf.DescriptorProtos.MethodOptions.IdempotencyLevel"/>
+    <fullyQualifiedTypeName name="org.apache.taglibs.standard.tag.common.xml.IfTag"/>
+    <fullyQualifiedTypeName name="service.impl.UserService"/>
+    <fullyQualifiedTypeName name="dao.impl.UserDao"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="model.UserModel"/>
+    <fullyQualifiedTypeName name="utils.SessionUtil"/>
+    <fullyQualifiedTypeName name="service.INewService"/>
+    <fullyQualifiedTypeName name="model.NewModel"/>
+    <fullyQualifiedTypeName name="utils.HttpUtil"/>
 </qualifiedTypeNameHistroy>

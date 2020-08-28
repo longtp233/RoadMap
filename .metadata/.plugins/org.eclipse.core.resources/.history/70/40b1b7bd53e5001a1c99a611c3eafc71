@@ -1,0 +1,7 @@
+package service;
+
+import model.*;
+
+public interface IUserService {
+	UserModel  findByUserNameAndPassword(String userName, String password, Integer status);
+}

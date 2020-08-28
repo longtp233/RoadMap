@@ -1,0 +1,12 @@
+127.0.0.1 - - [28/Aug/2020:08:17:03 +0700] "GET / HTTP/1.1" 404 709
+127.0.0.1 - - [28/Aug/2020:08:17:13 +0700] "GET /favicon.ico HTTP/1.1" 404 720
+127.0.0.1 - - [28/Aug/2020:08:17:13 +0700] "GET /roadmap/admin-list HTTP/1.1" 302 -
+127.0.0.1 - - [28/Aug/2020:08:17:15 +0700] "GET /roadmap/admin-list?type=new HTTP/1.1" 302 -
+127.0.0.1 - - [28/Aug/2020:08:17:15 +0700] "GET /roadmap/login HTTP/1.1" 200 1547
+127.0.0.1 - - [28/Aug/2020:08:17:15 +0700] "GET /roadmap/template/login/style.css HTTP/1.1" 200 1460
+127.0.0.1 - - [28/Aug/2020:08:17:21 +0700] "POST /roadmap/login HTTP/1.1" 200 1577
+127.0.0.1 - - [28/Aug/2020:08:17:32 +0700] "POST /roadmap/login HTTP/1.1" 302 -
+127.0.0.1 - - [28/Aug/2020:08:17:32 +0700] "GET /roadmap/admin HTTP/1.1" 200 4314
+127.0.0.1 - - [28/Aug/2020:08:17:34 +0700] "GET /roadmap/admin-list HTTP/1.1" 200 8115
+127.0.0.1 - - [28/Aug/2020:08:17:37 +0700] "GET /roadmap/admin-list?type=new HTTP/1.1" 200 7961
+127.0.0.1 - - [28/Aug/2020:09:16:23 +0700] "GET / HTTP/1.1" 404 709

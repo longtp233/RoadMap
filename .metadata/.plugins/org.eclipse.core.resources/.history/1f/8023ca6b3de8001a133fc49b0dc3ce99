@@ -1,0 +1,3 @@
+ <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        Xin chào, ${USERMODEL.fullName}
+                    </a>

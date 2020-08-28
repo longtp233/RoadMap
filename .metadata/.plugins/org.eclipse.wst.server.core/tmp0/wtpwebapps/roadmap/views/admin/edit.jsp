@@ -8,18 +8,7 @@
 <body>
 <div class="main-content">
     <div class="main-content-inner">
-        <div class="breadcrumbs" id="breadcrumbs">
-            <script type="text/javascript">
-                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-            </script>
-            <ul class="breadcrumb">
-                <li>
-                    <i class="ace-icon fa fa-home home-icon"></i>
-                    <a href="#">Trang chủ</a>
-                </li>
-                <li class="active">Chỉnh sửa bài viết</li>
-            </ul><!-- /.breadcrumb -->
-        </div>
+        
         <div class="page-content">
             <div class="row">
                 <div class="col-xs-12">
@@ -32,22 +21,9 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">Thể loại</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="categoryCode" name="categoryCode">
-                                        <c:if test="${empty model.categoryCode}">
-                                            <option value="">Chọn loại bài viết</option>
-                                            <c:forEach var="item" items="${categories}">
-                                                <option value="${item.code}">${item.name}</option>
-                                            </c:forEach>
-                                        </c:if>
-                                        <c:if test="${not empty model.categoryCode}">
-                                            <option value="">Chọn loại bài viết</option>
-                                            <c:forEach var="item" items="${categories}">
-                                                <option value="${item.code}" <c:if test="${item.code == model.categoryCode}">selected="selected"</c:if>>
-                                                        ${item.name}
-                                                </option>
-                                            </c:forEach>
-                                        </c:if>
-                                    </select>
+                                   
+                                        <input type="text" class="form-control" id="title" name="title" value="${model.categoryId}"/>
+                                   
                                 </div>
                             </div>
                             <br/>
@@ -59,22 +35,8 @@
                                 </div>
                             </div>
                             <br/>
-                            <br/>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right">Hình đại diện</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="thumbnail" name="thumbnail" value="${model.thumbnail}"/>
-                                </div>
-                            </div>
-                            <br/>
-                            <br/>
-                            <div class="form-group">
-                                <label class="col-sm-3 control-label no-padding-right">Mô tả ngắn</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="shortDescription" name="shortDescription" value="${model.shortDescription}"/>
-                                </div>
-                            </div>
-                            <br/>
+              
+                            
                             <br/>
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">Nội dung</label>
@@ -108,6 +70,7 @@
 	});
 	
     $('#btnAddOrUpdateNew').click(function (e) {
+    	alert("click add");
         e.preventDefault();
         var data = {};
         var formData = $('#formSubmit').serializeArray();

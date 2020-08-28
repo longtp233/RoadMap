@@ -50,8 +50,7 @@ public class ListAndEdit extends HttpServlet {
 			if(aString.equals("edit")) {
 				view="views/admin/edit.jsp";
 				Long idTemp= Long.parseLong(id); 
-				model = newService.findOne(idTemp); 
-			//	request.setAttribute("categories", categoryService.findAll()); 
+				model = newService.findOne(idTemp);  
 				request.setAttribute(Const.MODEL,model );
 				
 			}else if(aString.equals("new")) {

@@ -21,22 +21,9 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label no-padding-right">Thể loại</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control" id="categoryCode" name="categoryCode">
-                                        <c:if test="${empty model.categoryCode}">
-                                            <option value="">Chọn loại bài viết</option>
-                                            <c:forEach var="item" items="${categories}">
-                                                <option value="${item.code}">${item.name}</option>
-                                            </c:forEach>
-                                        </c:if>
-                                        <c:if test="${not empty model.categoryCode}">
-                                            <option value="">Chọn loại bài viết</option>
-                                            <c:forEach var="item" items="${categories}">
-                                                <option value="${item.code}" <c:if test="${item.code == model.categoryCode}">selected="selected"</c:if>>
-                                                        ${item.name}
-                                                </option>
-                                            </c:forEach>
-                                        </c:if>
-                                    </select>
+                                   
+                                        <input type="text" class="form-control" id="title" name="title" value="${model.categoryId}"/>
+                                   
                                 </div>
                             </div>
                             <br/>
@@ -83,6 +70,7 @@
 	});
 	
     $('#btnAddOrUpdateNew').click(function (e) {
+    	alert("click add");
         e.preventDefault();
         var data = {};
         var formData = $('#formSubmit').serializeArray();
